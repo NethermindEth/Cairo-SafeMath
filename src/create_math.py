@@ -93,6 +93,6 @@ end
 """
         with open(file_name, 'w') as f:
             f.write(math_functions)
-    copyfile("src/SafeMath/constants.cairo", os.path.join(base_path, "constants.cairo"))
+    copyfile("src/constants.cairo", os.path.join(base_path, "constants.cairo"))
 if __name__ == "__main__":
    main() 
