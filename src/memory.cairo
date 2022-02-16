@@ -20,7 +20,7 @@ struct MemCell:
     member value : felt
 end
 
-func warp_idx{range_check_ptr}(arrayIndex : Uint256, width : felt, offset : felt) -> (
+func idx{range_check_ptr}(arrayIndex : Uint256, width : felt, offset : felt) -> (
         feltIndex : Uint256):
     let (width256) = felt_to_uint256(width)
     let (offset256) = felt_to_uint256(offset)
@@ -32,16 +32,16 @@ func warp_idx{range_check_ptr}(arrayIndex : Uint256, width : felt, offset : felt
     return (result)
 end
 
-func warp_memory_init() -> (warp_memory : MemCell*):
-    let (warp_memory : MemCell*) = alloc()
-    assert warp_memory.name = 0
-    assert warp_memory.offset.low = 0
-    assert warp_memory.offset.high = 0
-    assert warp_memory.value = 0
-    return (warp_memory)
+func memory_init() -> (memory : MemCell*):
+    let (memory : MemCell*) = alloc()
+    assert memory.name = 0
+    assert memory.offset.low = 0
+    assert memory.offset.high = 0
+    assert memory.value = 0
+    return (memory)
 end
 
-func warp_create_array{range_check_ptr, warp_memory : MemCell*}(len : Uint256) -> (name : felt):
+func create_array{range_check_ptr, memory : MemCell*}(len : Uint256) -> (name : felt):
     alloc_locals
     # Create a unique identifier for the array
     let (local name : felt) = _get_next_name()
@@ -52,24 +52,24 @@ func warp_create_array{range_check_ptr, warp_memory : MemCell*}(len : Uint256) -
     return (name=name)
 end
 
-func warp_memory_read{range_check_ptr}(warp_memory : MemCell*, name : felt, offset : Uint256) -> (
+func memory_read{range_check_ptr}(memory : MemCell*, name : felt, offset : Uint256) -> (
         res : felt):
-    let (is_correct_cell : felt) = _at_current_cell(warp_memory, name, offset)
+    let (is_correct_cell : felt) = _at_current_cell(memory, name, offset)
     if is_correct_cell == 1:
-        return (res=warp_memory.value)
+        return (res=memory.value)
     else:
-        return warp_memory_read(warp_memory - MemCell.SIZE, name, offset)
+        return memory_read(memory - MemCell.SIZE, name, offset)
     end
 end
 
-func warp_memory_write{warp_memory : MemCell*}(name : felt, offset : Uint256, value : felt) -> ():
-    # First increment warp_memory, then set the properties of the new cell
-    # This means that warp_memory always points to a valid cell
-    let warp_memory = warp_memory + MemCell.SIZE
-    assert warp_memory.name = name
-    assert warp_memory.offset.low = offset.low
-    assert warp_memory.offset.high = offset.high
-    assert warp_memory.value = value
+func memory_write{memory : MemCell*}(name : felt, offset : Uint256, value : felt) -> ():
+    # First increment memory, then set the properties of the new cell
+    # This means that memory always points to a valid cell
+    let memory = memory + MemCell.SIZE
+    assert memory.name = name
+    assert memory.offset.low = offset.low
+    assert memory.offset.high = offset.high
+    assert memory.value = value
     return ()
 end
 
@@ -78,46 +78,46 @@ end
 const _len_offset_low = 2 ** 128
 const _len_offset_high = 2 ** 128 + 1
 
-func warp_get_array_length{range_check_ptr, warp_memory : MemCell*}(name : felt) -> (len : Uint256):
+func get_array_length{range_check_ptr, memory : MemCell*}(name : felt) -> (len : Uint256):
     alloc_locals
-    let (local low : felt) = warp_memory_read(warp_memory, name, Uint256(_len_offset_low, 0))
-    let (high : felt) = warp_memory_read(warp_memory, name, Uint256(_len_offset_high, 0))
+    let (local low : felt) = memory_read(memory, name, Uint256(_len_offset_low, 0))
+    let (high : felt) = memory_read(memory, name, Uint256(_len_offset_high, 0))
     return (len=Uint256(low, high))
 end
 
 # ------------------------------implementation----------------------------------
 
-func _set_array_length{warp_memory : MemCell*}(name : felt, len : Uint256) -> ():
-    warp_memory_write(name, Uint256(_len_offset_low, 0), len.low)
-    return warp_memory_write(name, Uint256(_len_offset_high, 0), len.high)
+func _set_array_length{memory : MemCell*}(name : felt, len : Uint256) -> ():
+    memory_write(name, Uint256(_len_offset_low, 0), len.low)
+    return memory_write(name, Uint256(_len_offset_high, 0), len.high)
 end
 
-func _at_current_cell{range_check_ptr}(warp_memory : MemCell*, name : felt, offset : Uint256) -> (
+func _at_current_cell{range_check_ptr}(memory : MemCell*, name : felt, offset : Uint256) -> (
         res : felt):
-    if warp_memory.name != name:
+    if memory.name != name:
         return (0)
     end
-    return uint256_eq(warp_memory.offset, offset)
+    return uint256_eq(memory.offset, offset)
 end
 
-func _get_next_name{range_check_ptr, warp_memory : MemCell*}() -> (name : felt):
-    let (oldName : felt) = warp_memory_read(warp_memory, 0, Uint256(0, 0))
+func _get_next_name{range_check_ptr, memory : MemCell*}() -> (name : felt):
+    let (oldName : felt) = memory_read(memory, 0, Uint256(0, 0))
     let newName = oldName + 1
-    warp_memory_write(0, Uint256(0, 0), newName)
+    memory_write(0, Uint256(0, 0), newName)
     return (name=newName)
 end
 
 # recurse along the array, setting the length to the length and the values to 0
 # start at curr = 0 and end once curr = len
-func _init_arr{range_check_ptr, warp_memory : MemCell*}(
+func _init_arr{range_check_ptr, memory : MemCell*}(
         name : felt, len : Uint256, curr : Uint256) -> ():
     let (eq : felt) = uint256_eq(curr, len)
     if eq == 0:
-        warp_memory_write(name, curr, 0)
+        memory_write(name, curr, 0)
         let (next : Uint256, _) = uint256_add(curr, Uint256(1, 0))
         return _init_arr(name, len, next)
     else:
-        warp_memory_write(name, curr, 0)
+        memory_write(name, curr, 0)
         return ()
     end
 end
