@@ -4,25 +4,20 @@ from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.cairo.common.uint256 import Uint256, uint256_mul, uint256_cond_neg, uint256_signed_nn
 from warplib.maths.mul_unsafe import (
-    mul_unsafe8, mul_unsafe16, mul_unsafe24, mul_unsafe32, mul_unsafe40,
-    mul_unsafe48, mul_unsafe56, mul_unsafe64, mul_unsafe72, mul_unsafe80,
-    mul_unsafe88, mul_unsafe96, mul_unsafe104, mul_unsafe112,
-    mul_unsafe120, mul_unsafe128, mul_unsafe136, mul_unsafe144,
-    mul_unsafe152, mul_unsafe160, mul_unsafe168, mul_unsafe176,
-    mul_unsafe184, mul_unsafe192, mul_unsafe200, mul_unsafe208,
-    mul_unsafe216, mul_unsafe224, mul_unsafe232, mul_unsafe240,
-    mul_unsafe248)
+    mul_unsafe8, mul_unsafe16, mul_unsafe24, mul_unsafe32, mul_unsafe40, mul_unsafe48, mul_unsafe56,
+    mul_unsafe64, mul_unsafe72, mul_unsafe80, mul_unsafe88, mul_unsafe96, mul_unsafe104,
+    mul_unsafe112, mul_unsafe120, mul_unsafe128, mul_unsafe136, mul_unsafe144, mul_unsafe152,
+    mul_unsafe160, mul_unsafe168, mul_unsafe176, mul_unsafe184, mul_unsafe192, mul_unsafe200,
+    mul_unsafe208, mul_unsafe216, mul_unsafe224, mul_unsafe232, mul_unsafe240, mul_unsafe248)
 from warplib.maths.negate import (
-    negate8, negate16, negate24, negate32, negate40, negate48,
-    negate56, negate64, negate72, negate80, negate88, negate96,
-    negate104, negate112, negate120, negate128, negate136, negate144,
-    negate152, negate160, negate168, negate176, negate184, negate192,
-    negate200, negate208, negate216, negate224, negate232, negate240,
-    negate248)
+    negate8, negate16, negate24, negate32, negate40, negate48, negate56, negate64, negate72,
+    negate80, negate88, negate96, negate104, negate112, negate120, negate128, negate136, negate144,
+    negate152, negate160, negate168, negate176, negate184, negate192, negate200, negate208,
+    negate216, negate224, negate232, negate240, negate248)
 from warplib.maths.utils import felt_to_uint256
 
-func mul_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
-        lhs : felt, rhs : felt) -> (res : felt):
+func mul_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
+        res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80)
     let (local right_msb) = bitwise_and(rhs, 0x80)

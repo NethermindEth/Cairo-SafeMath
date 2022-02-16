@@ -6,18 +6,14 @@ from starkware.cairo.common.uint256 import Uint256, uint256_mul, uint256_cond_ne
 from warplib.maths.utils import felt_to_uint256
 from warplib.maths.le import le
 from warplib.maths.mul import (
-    mul8, mul16, mul24, mul32, mul40, mul48, mul56, mul64,
-    mul72, mul80, mul88, mul96, mul104, mul112, mul120,
-    mul128, mul136, mul144, mul152, mul160, mul168, mul176,
-    mul184, mul192, mul200, mul208, mul216, mul224, mul232,
-    mul240, mul248)
+    mul8, mul16, mul24, mul32, mul40, mul48, mul56, mul64, mul72, mul80, mul88, mul96, mul104,
+    mul112, mul120, mul128, mul136, mul144, mul152, mul160, mul168, mul176, mul184, mul192, mul200,
+    mul208, mul216, mul224, mul232, mul240, mul248)
 from warplib.maths.negate import (
-    negate8, negate16, negate24, negate32, negate40, negate48,
-    negate56, negate64, negate72, negate80, negate88, negate96,
-    negate104, negate112, negate120, negate128, negate136, negate144,
-    negate152, negate160, negate168, negate176, negate184, negate192,
-    negate200, negate208, negate216, negate224, negate232, negate240,
-    negate248)
+    negate8, negate16, negate24, negate32, negate40, negate48, negate56, negate64, negate72,
+    negate80, negate88, negate96, negate104, negate112, negate120, negate128, negate136, negate144,
+    negate152, negate160, negate168, negate176, negate184, negate192, negate200, negate208,
+    negate216, negate224, negate232, negate240, negate248)
 
 func mul_signed8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
         res : felt):
@@ -983,8 +979,7 @@ func mul_signed208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         else:
             let (rhs_abs) = negate208(rhs)
             let (res_abs) = mul208(lhs, rhs_abs)
-            let (in_range) = le(
-                res_abs, 0x8000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x8000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate208(res_abs)
             return (res)
@@ -994,8 +989,7 @@ func mul_signed208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         if right_msb == 0:
             let (lhs_abs) = negate208(lhs)
             let (res_abs) = mul208(lhs_abs, rhs)
-            let (in_range) = le(
-                res_abs, 0x8000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x8000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate208(res_abs)
             return (res)
@@ -1024,8 +1018,7 @@ func mul_signed216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         else:
             let (rhs_abs) = negate216(rhs)
             let (res_abs) = mul216(lhs, rhs_abs)
-            let (in_range) = le(
-                res_abs, 0x800000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x800000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate216(res_abs)
             return (res)
@@ -1035,8 +1028,7 @@ func mul_signed216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         if right_msb == 0:
             let (lhs_abs) = negate216(lhs)
             let (res_abs) = mul216(lhs_abs, rhs)
-            let (in_range) = le(
-                res_abs, 0x800000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x800000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate216(res_abs)
             return (res)
@@ -1067,8 +1059,7 @@ func mul_signed224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         else:
             let (rhs_abs) = negate224(rhs)
             let (res_abs) = mul224(lhs, rhs_abs)
-            let (in_range) = le(
-                res_abs, 0x80000000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x80000000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate224(res_abs)
             return (res)
@@ -1079,8 +1070,7 @@ func mul_signed224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, r
         if right_msb == 0:
             let (lhs_abs) = negate224(lhs)
             let (res_abs) = mul224(lhs_abs, rhs)
-            let (in_range) = le(
-                res_abs, 0x80000000000000000000000000000000000000000000000000000000)
+            let (in_range) = le(res_abs, 0x80000000000000000000000000000000000000000000000000000000)
             assert in_range = 1
             let (res) = negate224(res_abs)
             return (res)

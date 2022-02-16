@@ -244,8 +244,7 @@ func int8_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00)
     end
 end
-func int8_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int8_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -338,8 +337,7 @@ func int16_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffffffffffff0000)
     end
 end
-func int16_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -347,8 +345,7 @@ func int16_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff0000)
     end
 end
-func int16_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -356,8 +353,7 @@ func int16_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -365,8 +361,7 @@ func int16_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -374,8 +369,7 @@ func int16_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -383,8 +377,7 @@ func int16_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -392,8 +385,7 @@ func int16_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -401,8 +393,7 @@ func int16_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -410,8 +401,7 @@ func int16_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -419,8 +409,7 @@ func int16_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -428,8 +417,7 @@ func int16_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -437,8 +425,7 @@ func int16_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -446,8 +433,7 @@ func int16_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -455,8 +441,7 @@ func int16_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -464,8 +449,7 @@ func int16_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -473,8 +457,7 @@ func int16_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -482,8 +465,7 @@ func int16_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -491,8 +473,7 @@ func int16_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -500,8 +481,7 @@ func int16_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int16_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
     if msb == 0:
         return (op)
@@ -509,8 +489,7 @@ func int16_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000)
     end
 end
-func int16_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int16_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -595,8 +574,7 @@ func int24_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffffffffff000000)
     end
 end
-func int24_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -604,8 +582,7 @@ func int24_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff000000)
     end
 end
-func int24_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -613,8 +590,7 @@ func int24_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff000000)
     end
 end
-func int24_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -622,8 +598,7 @@ func int24_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -631,8 +606,7 @@ func int24_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -640,8 +614,7 @@ func int24_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -649,8 +622,7 @@ func int24_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -658,8 +630,7 @@ func int24_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -667,8 +638,7 @@ func int24_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -676,8 +646,7 @@ func int24_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -685,8 +654,7 @@ func int24_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -694,8 +662,7 @@ func int24_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -703,8 +670,7 @@ func int24_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -712,8 +678,7 @@ func int24_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -721,8 +686,7 @@ func int24_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -730,8 +694,7 @@ func int24_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -739,8 +702,7 @@ func int24_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -748,8 +710,7 @@ func int24_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -757,8 +718,7 @@ func int24_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int24_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
     if msb == 0:
         return (op)
@@ -766,8 +726,7 @@ func int24_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000)
     end
 end
-func int24_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int24_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -844,8 +803,7 @@ func int32_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffffffff00000000)
     end
 end
-func int32_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -853,8 +811,7 @@ func int32_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff00000000)
     end
 end
-func int32_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -862,8 +819,7 @@ func int32_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff00000000)
     end
 end
-func int32_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -871,8 +827,7 @@ func int32_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -880,8 +835,7 @@ func int32_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -889,8 +843,7 @@ func int32_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -898,8 +851,7 @@ func int32_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -907,8 +859,7 @@ func int32_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -916,8 +867,7 @@ func int32_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -925,8 +875,7 @@ func int32_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -934,8 +883,7 @@ func int32_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -943,8 +891,7 @@ func int32_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -952,8 +899,7 @@ func int32_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -961,8 +907,7 @@ func int32_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -970,8 +915,7 @@ func int32_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -979,8 +923,7 @@ func int32_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -988,8 +931,7 @@ func int32_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -997,8 +939,7 @@ func int32_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -1006,8 +947,7 @@ func int32_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int32_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
     if msb == 0:
         return (op)
@@ -1015,8 +955,7 @@ func int32_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000)
     end
 end
-func int32_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int32_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1085,8 +1024,7 @@ func int40_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffffff0000000000)
     end
 end
-func int40_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1094,8 +1032,7 @@ func int40_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff0000000000)
     end
 end
-func int40_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1103,8 +1040,7 @@ func int40_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff0000000000)
     end
 end
-func int40_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1112,8 +1048,7 @@ func int40_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1121,8 +1056,7 @@ func int40_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1130,8 +1064,7 @@ func int40_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1139,8 +1072,7 @@ func int40_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1148,8 +1080,7 @@ func int40_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1157,8 +1088,7 @@ func int40_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1166,8 +1096,7 @@ func int40_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1175,8 +1104,7 @@ func int40_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1184,8 +1112,7 @@ func int40_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1193,8 +1120,7 @@ func int40_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1202,8 +1128,7 @@ func int40_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1211,8 +1136,7 @@ func int40_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1220,8 +1144,7 @@ func int40_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1229,8 +1152,7 @@ func int40_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1238,8 +1160,7 @@ func int40_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1247,8 +1168,7 @@ func int40_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int40_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
     if msb == 0:
         return (op)
@@ -1256,8 +1176,7 @@ func int40_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000)
     end
 end
-func int40_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int40_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1318,8 +1237,7 @@ func int48_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffffff000000000000)
     end
 end
-func int48_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1327,8 +1245,7 @@ func int48_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff000000000000)
     end
 end
-func int48_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1336,8 +1253,7 @@ func int48_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff000000000000)
     end
 end
-func int48_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1345,8 +1261,7 @@ func int48_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff000000000000)
     end
 end
-func int48_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1354,8 +1269,7 @@ func int48_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1363,8 +1277,7 @@ func int48_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1372,8 +1285,7 @@ func int48_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1381,8 +1293,7 @@ func int48_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1390,8 +1301,7 @@ func int48_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1399,8 +1309,7 @@ func int48_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1408,8 +1317,7 @@ func int48_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1417,8 +1325,7 @@ func int48_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1426,8 +1333,7 @@ func int48_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1435,8 +1341,7 @@ func int48_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1444,8 +1349,7 @@ func int48_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1453,8 +1357,7 @@ func int48_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1462,8 +1365,7 @@ func int48_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1471,8 +1373,7 @@ func int48_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1480,8 +1381,7 @@ func int48_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int48_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
     if msb == 0:
         return (op)
@@ -1489,8 +1389,7 @@ func int48_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffffff000000000000)
     end
 end
-func int48_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int48_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1543,8 +1442,7 @@ func int56_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffffff00000000000000)
     end
 end
-func int56_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1552,8 +1450,7 @@ func int56_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff00000000000000)
     end
 end
-func int56_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1561,8 +1458,7 @@ func int56_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff00000000000000)
     end
 end
-func int56_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1570,8 +1466,7 @@ func int56_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff00000000000000)
     end
 end
-func int56_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1579,8 +1474,7 @@ func int56_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1588,8 +1482,7 @@ func int56_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1597,8 +1490,7 @@ func int56_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1606,8 +1498,7 @@ func int56_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1615,8 +1506,7 @@ func int56_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1624,8 +1514,7 @@ func int56_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1633,8 +1522,7 @@ func int56_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1642,8 +1530,7 @@ func int56_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1651,8 +1538,7 @@ func int56_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1660,8 +1546,7 @@ func int56_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1669,8 +1554,7 @@ func int56_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1678,8 +1562,7 @@ func int56_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1687,8 +1570,7 @@ func int56_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1696,8 +1578,7 @@ func int56_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1705,8 +1586,7 @@ func int56_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int56_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
     if msb == 0:
         return (op)
@@ -1714,8 +1594,7 @@ func int56_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffffff00000000000000)
     end
 end
-func int56_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int56_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1760,8 +1639,7 @@ func int64_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffffff0000000000000000)
     end
 end
-func int64_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1769,8 +1647,7 @@ func int64_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffff0000000000000000)
     end
 end
-func int64_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1778,8 +1655,7 @@ func int64_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff0000000000000000)
     end
 end
-func int64_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1787,8 +1663,7 @@ func int64_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff0000000000000000)
     end
 end
-func int64_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1796,8 +1671,7 @@ func int64_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1805,8 +1679,7 @@ func int64_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1814,8 +1687,7 @@ func int64_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1823,8 +1695,7 @@ func int64_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1832,8 +1703,7 @@ func int64_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1841,8 +1711,7 @@ func int64_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1850,8 +1719,7 @@ func int64_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1859,8 +1727,7 @@ func int64_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1868,8 +1735,7 @@ func int64_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1877,8 +1743,7 @@ func int64_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1886,8 +1751,7 @@ func int64_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1895,8 +1759,7 @@ func int64_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1904,8 +1767,7 @@ func int64_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1913,8 +1775,7 @@ func int64_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1922,8 +1783,7 @@ func int64_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int64_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     if msb == 0:
         return (op)
@@ -1931,8 +1791,7 @@ func int64_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffffff0000000000000000)
     end
 end
-func int64_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int64_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1969,8 +1828,7 @@ func int72_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffffff000000000000000000)
     end
 end
-func int72_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -1978,8 +1836,7 @@ func int72_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffff000000000000000000)
     end
 end
-func int72_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -1987,8 +1844,7 @@ func int72_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffff000000000000000000)
     end
 end
-func int72_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -1996,8 +1852,7 @@ func int72_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff000000000000000000)
     end
 end
-func int72_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2005,8 +1860,7 @@ func int72_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff000000000000000000)
     end
 end
-func int72_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2014,8 +1868,7 @@ func int72_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2023,8 +1876,7 @@ func int72_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2032,8 +1884,7 @@ func int72_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2041,8 +1892,7 @@ func int72_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2050,8 +1900,7 @@ func int72_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2059,8 +1908,7 @@ func int72_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2068,8 +1916,7 @@ func int72_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2077,8 +1924,7 @@ func int72_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2086,8 +1932,7 @@ func int72_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2095,8 +1940,7 @@ func int72_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2104,8 +1948,7 @@ func int72_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2113,8 +1956,7 @@ func int72_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2122,8 +1964,7 @@ func int72_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2131,8 +1972,7 @@ func int72_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int72_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     if msb == 0:
         return (op)
@@ -2140,8 +1980,7 @@ func int72_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffffff000000000000000000)
     end
 end
-func int72_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int72_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2170,8 +2009,7 @@ func int80_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xffff00000000000000000000)
     end
 end
-func int80_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2179,8 +2017,7 @@ func int80_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffff00000000000000000000)
     end
 end
-func int80_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2188,8 +2025,7 @@ func int80_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffff00000000000000000000)
     end
 end
-func int80_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2197,8 +2033,7 @@ func int80_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffff00000000000000000000)
     end
 end
-func int80_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2206,8 +2041,7 @@ func int80_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff00000000000000000000)
     end
 end
-func int80_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2215,8 +2049,7 @@ func int80_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2224,8 +2057,7 @@ func int80_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2233,8 +2065,7 @@ func int80_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2242,8 +2073,7 @@ func int80_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2251,8 +2081,7 @@ func int80_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2260,8 +2089,7 @@ func int80_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2269,8 +2097,7 @@ func int80_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2278,8 +2105,7 @@ func int80_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2287,8 +2113,7 @@ func int80_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2296,8 +2121,7 @@ func int80_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2305,8 +2129,7 @@ func int80_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2314,8 +2137,7 @@ func int80_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2323,8 +2145,7 @@ func int80_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2332,8 +2153,7 @@ func int80_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int80_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     if msb == 0:
         return (op)
@@ -2341,8 +2161,7 @@ func int80_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffffff00000000000000000000)
     end
 end
-func int80_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int80_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2363,8 +2182,7 @@ func int88_to_int96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -
         return (op + 0xff0000000000000000000000)
     end
 end
-func int88_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2372,8 +2190,7 @@ func int88_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffff0000000000000000000000)
     end
 end
-func int88_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2381,8 +2198,7 @@ func int88_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffff0000000000000000000000)
     end
 end
-func int88_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2390,8 +2206,7 @@ func int88_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffff0000000000000000000000)
     end
 end
-func int88_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2399,8 +2214,7 @@ func int88_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffff0000000000000000000000)
     end
 end
-func int88_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2408,8 +2222,7 @@ func int88_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2417,8 +2230,7 @@ func int88_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2426,8 +2238,7 @@ func int88_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2435,8 +2246,7 @@ func int88_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2444,8 +2254,7 @@ func int88_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2453,8 +2262,7 @@ func int88_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2462,8 +2270,7 @@ func int88_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2471,8 +2278,7 @@ func int88_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2480,8 +2286,7 @@ func int88_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2489,8 +2294,7 @@ func int88_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2498,8 +2302,7 @@ func int88_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2507,8 +2310,7 @@ func int88_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2516,8 +2318,7 @@ func int88_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2525,8 +2326,7 @@ func int88_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int88_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     if msb == 0:
         return (op)
@@ -2534,8 +2334,7 @@ func int88_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffffff0000000000000000000000)
     end
 end
-func int88_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int88_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2548,8 +2347,7 @@ func int88_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (res)
     end
 end
-func int96_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2557,8 +2355,7 @@ func int96_to_int104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xff000000000000000000000000)
     end
 end
-func int96_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2566,8 +2363,7 @@ func int96_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffff000000000000000000000000)
     end
 end
-func int96_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2575,8 +2371,7 @@ func int96_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffff000000000000000000000000)
     end
 end
-func int96_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2584,8 +2379,7 @@ func int96_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffff000000000000000000000000)
     end
 end
-func int96_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2593,8 +2387,7 @@ func int96_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffff000000000000000000000000)
     end
 end
-func int96_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2602,8 +2395,7 @@ func int96_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2611,8 +2403,7 @@ func int96_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2620,8 +2411,7 @@ func int96_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2629,8 +2419,7 @@ func int96_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2638,8 +2427,7 @@ func int96_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2647,8 +2435,7 @@ func int96_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2656,8 +2443,7 @@ func int96_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2665,8 +2451,7 @@ func int96_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2674,8 +2459,7 @@ func int96_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2683,8 +2467,7 @@ func int96_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2692,8 +2475,7 @@ func int96_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2701,8 +2483,7 @@ func int96_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2710,8 +2491,7 @@ func int96_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int96_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     if msb == 0:
         return (op)
@@ -2719,8 +2499,7 @@ func int96_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (op + 0xffffffffffffffffffffffffffffffffffffff000000000000000000000000)
     end
 end
-func int96_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int96_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2733,8 +2512,7 @@ func int96_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) 
         return (res)
     end
 end
-func int104_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2742,8 +2520,7 @@ func int104_to_int112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000)
     end
 end
-func int104_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2751,8 +2528,7 @@ func int104_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000)
     end
 end
-func int104_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2760,8 +2536,7 @@ func int104_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000)
     end
 end
-func int104_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2769,8 +2544,7 @@ func int104_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff00000000000000000000000000)
     end
 end
-func int104_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2778,8 +2552,7 @@ func int104_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2787,8 +2560,7 @@ func int104_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2796,8 +2568,7 @@ func int104_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2805,8 +2576,7 @@ func int104_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2814,8 +2584,7 @@ func int104_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2823,8 +2592,7 @@ func int104_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2832,8 +2600,7 @@ func int104_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2841,8 +2608,7 @@ func int104_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2850,8 +2616,7 @@ func int104_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2859,8 +2624,7 @@ func int104_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2868,8 +2632,7 @@ func int104_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2877,8 +2640,7 @@ func int104_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2886,8 +2648,7 @@ func int104_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int104_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2895,8 +2656,7 @@ func int104_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffffffff00000000000000000000000000)
     end
 end
-func int104_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int104_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2909,8 +2669,7 @@ func int104_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int112_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2918,8 +2677,7 @@ func int112_to_int120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000)
     end
 end
-func int112_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2927,8 +2685,7 @@ func int112_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000)
     end
 end
-func int112_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2936,8 +2693,7 @@ func int112_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff0000000000000000000000000000)
     end
 end
-func int112_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2945,8 +2701,7 @@ func int112_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2954,8 +2709,7 @@ func int112_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2963,8 +2717,7 @@ func int112_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2972,8 +2725,7 @@ func int112_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2981,8 +2733,7 @@ func int112_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2990,8 +2741,7 @@ func int112_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -2999,8 +2749,7 @@ func int112_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3008,8 +2757,7 @@ func int112_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3017,8 +2765,7 @@ func int112_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3026,8 +2773,7 @@ func int112_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3035,8 +2781,7 @@ func int112_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3044,8 +2789,7 @@ func int112_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3053,8 +2797,7 @@ func int112_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int112_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3062,8 +2805,7 @@ func int112_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffffff0000000000000000000000000000)
     end
 end
-func int112_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int112_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3076,8 +2818,7 @@ func int112_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int120_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3085,8 +2826,7 @@ func int120_to_int128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000)
     end
 end
-func int120_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3094,8 +2834,7 @@ func int120_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff000000000000000000000000000000)
     end
 end
-func int120_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3103,8 +2842,7 @@ func int120_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff000000000000000000000000000000)
     end
 end
-func int120_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3112,8 +2850,7 @@ func int120_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3121,8 +2858,7 @@ func int120_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3130,8 +2866,7 @@ func int120_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3139,8 +2874,7 @@ func int120_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3148,8 +2882,7 @@ func int120_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3157,8 +2890,7 @@ func int120_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3166,8 +2898,7 @@ func int120_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3175,8 +2906,7 @@ func int120_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3184,8 +2914,7 @@ func int120_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3193,8 +2922,7 @@ func int120_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3202,8 +2930,7 @@ func int120_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3211,8 +2938,7 @@ func int120_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int120_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3220,8 +2946,7 @@ func int120_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffffff000000000000000000000000000000)
     end
 end
-func int120_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int120_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3234,8 +2959,7 @@ func int120_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int128_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3243,8 +2967,7 @@ func int128_to_int136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000000000)
     end
 end
-func int128_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3252,8 +2975,7 @@ func int128_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000000000)
     end
 end
-func int128_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3261,8 +2983,7 @@ func int128_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3270,8 +2991,7 @@ func int128_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3279,8 +2999,7 @@ func int128_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3288,8 +3007,7 @@ func int128_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3297,8 +3015,7 @@ func int128_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3306,8 +3023,7 @@ func int128_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3315,8 +3031,7 @@ func int128_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3324,8 +3039,7 @@ func int128_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3333,8 +3047,7 @@ func int128_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3342,8 +3055,7 @@ func int128_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3351,8 +3063,7 @@ func int128_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3360,8 +3071,7 @@ func int128_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int128_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3369,8 +3079,7 @@ func int128_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffffff00000000000000000000000000000000)
     end
 end
-func int128_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int128_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3383,8 +3092,7 @@ func int128_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int136_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3392,8 +3100,7 @@ func int136_to_int144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000000000)
     end
 end
-func int136_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3401,8 +3108,7 @@ func int136_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3410,8 +3116,7 @@ func int136_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3419,8 +3124,7 @@ func int136_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3428,8 +3132,7 @@ func int136_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3437,8 +3140,7 @@ func int136_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3446,8 +3148,7 @@ func int136_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3455,8 +3156,7 @@ func int136_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3464,8 +3164,7 @@ func int136_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3473,8 +3172,7 @@ func int136_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3482,8 +3180,7 @@ func int136_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3491,8 +3188,7 @@ func int136_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3500,8 +3196,7 @@ func int136_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int136_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3509,8 +3204,7 @@ func int136_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffffff0000000000000000000000000000000000)
     end
 end
-func int136_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int136_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3523,8 +3217,7 @@ func int136_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int144_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3532,8 +3225,7 @@ func int144_to_int152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000000000)
     end
 end
-func int144_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3541,8 +3233,7 @@ func int144_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3550,8 +3241,7 @@ func int144_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3559,8 +3249,7 @@ func int144_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3568,8 +3257,7 @@ func int144_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3577,8 +3265,7 @@ func int144_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3586,8 +3273,7 @@ func int144_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3595,8 +3281,7 @@ func int144_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3604,8 +3289,7 @@ func int144_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3613,8 +3297,7 @@ func int144_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3622,8 +3305,7 @@ func int144_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3631,8 +3313,7 @@ func int144_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int144_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3640,8 +3321,7 @@ func int144_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffffff000000000000000000000000000000000000)
     end
 end
-func int144_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int144_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3654,8 +3334,7 @@ func int144_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int152_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3663,8 +3342,7 @@ func int152_to_int160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3672,8 +3350,7 @@ func int152_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3681,8 +3358,7 @@ func int152_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3690,8 +3366,7 @@ func int152_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3699,8 +3374,7 @@ func int152_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3708,8 +3382,7 @@ func int152_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3717,8 +3390,7 @@ func int152_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3726,8 +3398,7 @@ func int152_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3735,8 +3406,7 @@ func int152_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3744,8 +3414,7 @@ func int152_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3753,8 +3422,7 @@ func int152_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int152_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3762,8 +3430,7 @@ func int152_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffffff00000000000000000000000000000000000000)
     end
 end
-func int152_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int152_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3776,8 +3443,7 @@ func int152_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int160_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3785,8 +3451,7 @@ func int160_to_int168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3794,8 +3459,7 @@ func int160_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3803,8 +3467,7 @@ func int160_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3812,8 +3475,7 @@ func int160_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3821,8 +3483,7 @@ func int160_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3830,8 +3491,7 @@ func int160_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3839,8 +3499,7 @@ func int160_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3848,8 +3507,7 @@ func int160_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3857,8 +3515,7 @@ func int160_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3866,8 +3523,7 @@ func int160_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int160_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3875,8 +3531,7 @@ func int160_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffffff0000000000000000000000000000000000000000)
     end
 end
-func int160_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int160_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3889,8 +3544,7 @@ func int160_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int168_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3898,8 +3552,7 @@ func int168_to_int176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3907,8 +3560,7 @@ func int168_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3916,8 +3568,7 @@ func int168_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3925,8 +3576,7 @@ func int168_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3934,8 +3584,7 @@ func int168_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3943,8 +3592,7 @@ func int168_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3952,8 +3600,7 @@ func int168_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3961,8 +3608,7 @@ func int168_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3970,8 +3616,7 @@ func int168_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int168_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -3979,8 +3624,7 @@ func int168_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffffff000000000000000000000000000000000000000000)
     end
 end
-func int168_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int168_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3993,8 +3637,7 @@ func int168_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int176_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4002,8 +3645,7 @@ func int176_to_int184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4011,8 +3653,7 @@ func int176_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4020,8 +3661,7 @@ func int176_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4029,8 +3669,7 @@ func int176_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4038,8 +3677,7 @@ func int176_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4047,8 +3685,7 @@ func int176_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4056,8 +3693,7 @@ func int176_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4065,8 +3701,7 @@ func int176_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int176_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4074,8 +3709,7 @@ func int176_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffffff00000000000000000000000000000000000000000000)
     end
 end
-func int176_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int176_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4088,8 +3722,7 @@ func int176_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int184_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4097,8 +3730,7 @@ func int184_to_int192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4106,8 +3738,7 @@ func int184_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4115,8 +3746,7 @@ func int184_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4124,8 +3754,7 @@ func int184_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4133,8 +3762,7 @@ func int184_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4142,8 +3770,7 @@ func int184_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4151,8 +3778,7 @@ func int184_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int184_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4160,8 +3786,7 @@ func int184_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffffff0000000000000000000000000000000000000000000000)
     end
 end
-func int184_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int184_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4174,8 +3799,7 @@ func int184_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int192_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4183,8 +3807,7 @@ func int192_to_int200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4192,8 +3815,7 @@ func int192_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4201,8 +3823,7 @@ func int192_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4210,8 +3831,7 @@ func int192_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4219,8 +3839,7 @@ func int192_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4228,8 +3847,7 @@ func int192_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int192_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4237,8 +3855,7 @@ func int192_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffffff000000000000000000000000000000000000000000000000)
     end
 end
-func int192_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int192_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4251,8 +3868,7 @@ func int192_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int200_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4260,8 +3876,7 @@ func int200_to_int208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4269,8 +3884,7 @@ func int200_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4278,8 +3892,7 @@ func int200_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4287,8 +3900,7 @@ func int200_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4296,8 +3908,7 @@ func int200_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int200_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4305,8 +3916,7 @@ func int200_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffffff00000000000000000000000000000000000000000000000000)
     end
 end
-func int200_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int200_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4319,8 +3929,7 @@ func int200_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int208_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int208_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4328,8 +3937,7 @@ func int208_to_int216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000000000000000000000000000)
     end
 end
-func int208_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int208_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4337,8 +3945,7 @@ func int208_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000000000000000000000000000)
     end
 end
-func int208_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int208_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4346,8 +3953,7 @@ func int208_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff0000000000000000000000000000000000000000000000000000)
     end
 end
-func int208_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int208_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4355,8 +3961,7 @@ func int208_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff0000000000000000000000000000000000000000000000000000)
     end
 end
-func int208_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int208_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4364,8 +3969,7 @@ func int208_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffffff0000000000000000000000000000000000000000000000000000)
     end
 end
-func int208_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int208_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4378,8 +3982,7 @@ func int208_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int216_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int216_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4387,8 +3990,7 @@ func int216_to_int224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000000000000000000000000000)
     end
 end
-func int216_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int216_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4396,8 +3998,7 @@ func int216_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff000000000000000000000000000000000000000000000000000000)
     end
 end
-func int216_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int216_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4405,8 +4006,7 @@ func int216_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff000000000000000000000000000000000000000000000000000000)
     end
 end
-func int216_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int216_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4414,8 +4014,7 @@ func int216_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffffff000000000000000000000000000000000000000000000000000000)
     end
 end
-func int216_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int216_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4428,8 +4027,7 @@ func int216_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int224_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int224_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4437,8 +4035,7 @@ func int224_to_int232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff00000000000000000000000000000000000000000000000000000000)
     end
 end
-func int224_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int224_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4446,8 +4043,7 @@ func int224_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff00000000000000000000000000000000000000000000000000000000)
     end
 end
-func int224_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int224_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4455,8 +4051,7 @@ func int224_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffffff00000000000000000000000000000000000000000000000000000000)
     end
 end
-func int224_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int224_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4469,8 +4064,7 @@ func int224_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int232_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int232_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4478,8 +4072,7 @@ func int232_to_int240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff0000000000000000000000000000000000000000000000000000000000)
     end
 end
-func int232_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int232_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4487,8 +4080,7 @@ func int232_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xffff0000000000000000000000000000000000000000000000000000000000)
     end
 end
-func int232_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int232_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4501,8 +4093,7 @@ func int232_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int240_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : felt):
+func int240_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000000000)
     if msb == 0:
         return (op)
@@ -4510,8 +4101,7 @@ func int240_to_int248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (op + 0xff000000000000000000000000000000000000000000000000000000000000)
     end
 end
-func int240_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int240_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4524,8 +4114,7 @@ func int240_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt)
         return (res)
     end
 end
-func int248_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+func int248_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : Uint256):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)

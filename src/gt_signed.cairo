@@ -3,13 +3,11 @@ from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_signed_lt
 from warplib.maths.lt_signed import (
-    lt_signed8, lt_signed16, lt_signed24, lt_signed32, lt_signed40,
-    lt_signed48, lt_signed56, lt_signed64, lt_signed72, lt_signed80,
-    lt_signed88, lt_signed96, lt_signed104, lt_signed112, lt_signed120,
-    lt_signed128, lt_signed136, lt_signed144, lt_signed152, lt_signed160,
-    lt_signed168, lt_signed176, lt_signed184, lt_signed192, lt_signed200,
-    lt_signed208, lt_signed216, lt_signed224, lt_signed232, lt_signed240,
-    lt_signed248)
+    lt_signed8, lt_signed16, lt_signed24, lt_signed32, lt_signed40, lt_signed48, lt_signed56,
+    lt_signed64, lt_signed72, lt_signed80, lt_signed88, lt_signed96, lt_signed104, lt_signed112,
+    lt_signed120, lt_signed128, lt_signed136, lt_signed144, lt_signed152, lt_signed160,
+    lt_signed168, lt_signed176, lt_signed184, lt_signed192, lt_signed200, lt_signed208,
+    lt_signed216, lt_signed224, lt_signed232, lt_signed240, lt_signed248)
 
 func gt_signed8{bitwise_ptr : BitwiseBuiltin*, range_check_ptr}(lhs : felt, rhs : felt) -> (
         res : felt):

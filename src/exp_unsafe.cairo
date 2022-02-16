@@ -3,14 +3,12 @@ from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_sub
 from warplib.maths.mul_unsafe import (
-    mul_unsafe8, mul_unsafe16, mul_unsafe24, mul_unsafe32, mul_unsafe40,
-    mul_unsafe48, mul_unsafe56, mul_unsafe64, mul_unsafe72, mul_unsafe80,
-    mul_unsafe88, mul_unsafe96, mul_unsafe104, mul_unsafe112,
-    mul_unsafe120, mul_unsafe128, mul_unsafe136, mul_unsafe144,
-    mul_unsafe152, mul_unsafe160, mul_unsafe168, mul_unsafe176,
-    mul_unsafe184, mul_unsafe192, mul_unsafe200, mul_unsafe208,
-    mul_unsafe216, mul_unsafe224, mul_unsafe232, mul_unsafe240,
-    mul_unsafe248, mul_unsafe256)
+    mul_unsafe8, mul_unsafe16, mul_unsafe24, mul_unsafe32, mul_unsafe40, mul_unsafe48, mul_unsafe56,
+    mul_unsafe64, mul_unsafe72, mul_unsafe80, mul_unsafe88, mul_unsafe96, mul_unsafe104,
+    mul_unsafe112, mul_unsafe120, mul_unsafe128, mul_unsafe136, mul_unsafe144, mul_unsafe152,
+    mul_unsafe160, mul_unsafe168, mul_unsafe176, mul_unsafe184, mul_unsafe192, mul_unsafe200,
+    mul_unsafe208, mul_unsafe216, mul_unsafe224, mul_unsafe232, mul_unsafe240, mul_unsafe248,
+    mul_unsafe256)
 
 func _repeated_multiplication8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         op : felt, count : felt) -> (res : felt):

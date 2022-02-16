@@ -5,11 +5,9 @@ from starkware.cairo.common.math_cmp import is_le, is_le_felt
 from starkware.cairo.common.uint256 import Uint256, uint256_and
 from warplib.maths.pow2 import pow2
 from warplib.maths.shr import (
-    shr8, shr16, shr24, shr32, shr40, shr48, shr56, shr64,
-    shr72, shr80, shr88, shr96, shr104, shr112, shr120,
-    shr128, shr136, shr144, shr152, shr160, shr168, shr176,
-    shr184, shr192, shr200, shr208, shr216, shr224, shr232,
-    shr240, shr248, shr256)
+    shr8, shr16, shr24, shr32, shr40, shr48, shr56, shr64, shr72, shr80, shr88, shr96, shr104,
+    shr112, shr120, shr128, shr136, shr144, shr152, shr160, shr168, shr176, shr184, shr192, shr200,
+    shr208, shr216, shr224, shr232, shr240, shr248, shr256)
 
 func shr_signed8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
         res : felt):
@@ -31,8 +29,8 @@ func shr_signed8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs
         end
     end
 end
-func shr_signed8_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
-        lhs : felt, rhs : Uint256) -> (res : felt):
+func shr_signed8_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : Uint256) -> (
+        res : felt):
     if rhs.high == 0:
         return shr8(lhs, rhs.low)
     else:
@@ -883,8 +881,8 @@ func shr_signed248_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return shr248(lhs, 248)
     end
 end
-func shr_signed256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
-        lhs : Uint256, rhs : felt) -> (res : Uint256):
+func shr_signed256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : Uint256, rhs : felt) -> (
+        res : Uint256):
     alloc_locals
     let (local lhs_msb) = bitwise_and(lhs.high, 0x80000000000000000000000000000000)
     let (logical_shift) = shr256(lhs, rhs)

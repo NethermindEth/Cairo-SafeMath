@@ -126,8 +126,7 @@ func mul152{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let (l256 : Uint256) = felt_to_uint256(lhs)
     let (r256 : Uint256) = felt_to_uint256(rhs)
     let (local res : Uint256) = mul256(l256, r256)
-    let (outOfRange : felt) = ge256(
-        res, Uint256(0x0, 0x100000000000000000000000000000000000000))
+    let (outOfRange : felt) = ge256(res, Uint256(0x0, 0x100000000000000000000000000000000000000))
     assert outOfRange = 0
     return (res.low + 0x100000000000000000000000000000000 * res.high)
 end
@@ -136,8 +135,7 @@ func mul160{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let (l256 : Uint256) = felt_to_uint256(lhs)
     let (r256 : Uint256) = felt_to_uint256(rhs)
     let (local res : Uint256) = mul256(l256, r256)
-    let (outOfRange : felt) = ge256(
-        res, Uint256(0x0, 0x10000000000000000000000000000000000000000))
+    let (outOfRange : felt) = ge256(res, Uint256(0x0, 0x10000000000000000000000000000000000000000))
     assert outOfRange = 0
     return (res.low + 0x100000000000000000000000000000000 * res.high)
 end

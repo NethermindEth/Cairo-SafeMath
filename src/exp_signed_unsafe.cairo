@@ -3,17 +3,14 @@ from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_sub
 from warplib.maths.mul_signed_unsafe import (
-    mul_signed_unsafe8, mul_signed_unsafe16, mul_signed_unsafe24,
-    mul_signed_unsafe32, mul_signed_unsafe40, mul_signed_unsafe48,
-    mul_signed_unsafe56, mul_signed_unsafe64, mul_signed_unsafe72,
-    mul_signed_unsafe80, mul_signed_unsafe88, mul_signed_unsafe96,
-    mul_signed_unsafe104, mul_signed_unsafe112, mul_signed_unsafe120,
-    mul_signed_unsafe128, mul_signed_unsafe136, mul_signed_unsafe144,
-    mul_signed_unsafe152, mul_signed_unsafe160, mul_signed_unsafe168,
-    mul_signed_unsafe176, mul_signed_unsafe184, mul_signed_unsafe192,
-    mul_signed_unsafe200, mul_signed_unsafe208, mul_signed_unsafe216,
-    mul_signed_unsafe224, mul_signed_unsafe232, mul_signed_unsafe240,
-    mul_signed_unsafe248, mul_signed_unsafe256)
+    mul_signed_unsafe8, mul_signed_unsafe16, mul_signed_unsafe24, mul_signed_unsafe32,
+    mul_signed_unsafe40, mul_signed_unsafe48, mul_signed_unsafe56, mul_signed_unsafe64,
+    mul_signed_unsafe72, mul_signed_unsafe80, mul_signed_unsafe88, mul_signed_unsafe96,
+    mul_signed_unsafe104, mul_signed_unsafe112, mul_signed_unsafe120, mul_signed_unsafe128,
+    mul_signed_unsafe136, mul_signed_unsafe144, mul_signed_unsafe152, mul_signed_unsafe160,
+    mul_signed_unsafe168, mul_signed_unsafe176, mul_signed_unsafe184, mul_signed_unsafe192,
+    mul_signed_unsafe200, mul_signed_unsafe208, mul_signed_unsafe216, mul_signed_unsafe224,
+    mul_signed_unsafe232, mul_signed_unsafe240, mul_signed_unsafe248, mul_signed_unsafe256)
 
 func _repeated_multiplication8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         op : felt, count : felt) -> (res : felt):
@@ -27,8 +24,8 @@ func _repeated_multiplication8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
-        lhs : felt, rhs : felt) -> (res : felt):
+func exp_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
+        res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:

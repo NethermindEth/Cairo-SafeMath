@@ -6,8 +6,7 @@ from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.cairo.common.uint256 import Uint256, uint256_shl
 from warplib.maths.pow2 import pow2
 
-func shl8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(8, rhs)
     if large_shift == 1:
@@ -28,8 +27,7 @@ func shl8_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
         return (0)
     end
 end
-func shl16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(16, rhs)
     if large_shift == 1:
@@ -50,8 +48,7 @@ func shl16_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(24, rhs)
     if large_shift == 1:
@@ -72,8 +69,7 @@ func shl24_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(32, rhs)
     if large_shift == 1:
@@ -94,8 +90,7 @@ func shl32_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(40, rhs)
     if large_shift == 1:
@@ -116,8 +111,7 @@ func shl40_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(48, rhs)
     if large_shift == 1:
@@ -138,8 +132,7 @@ func shl48_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(56, rhs)
     if large_shift == 1:
@@ -160,8 +153,7 @@ func shl56_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(64, rhs)
     if large_shift == 1:
@@ -182,8 +174,7 @@ func shl64_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(72, rhs)
     if large_shift == 1:
@@ -204,8 +195,7 @@ func shl72_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(80, rhs)
     if large_shift == 1:
@@ -226,8 +216,7 @@ func shl80_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(88, rhs)
     if large_shift == 1:
@@ -248,8 +237,7 @@ func shl88_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(96, rhs)
     if large_shift == 1:
@@ -270,8 +258,7 @@ func shl96_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs :
         return (0)
     end
 end
-func shl104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(104, rhs)
     if large_shift == 1:
@@ -292,8 +279,7 @@ func shl104_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(112, rhs)
     if large_shift == 1:
@@ -314,8 +300,7 @@ func shl112_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(120, rhs)
     if large_shift == 1:
@@ -336,8 +321,7 @@ func shl120_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(128, rhs)
     if large_shift == 1:
@@ -358,8 +342,7 @@ func shl128_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(136, rhs)
     if large_shift == 1:
@@ -380,8 +363,7 @@ func shl136_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(144, rhs)
     if large_shift == 1:
@@ -402,8 +384,7 @@ func shl144_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(152, rhs)
     if large_shift == 1:
@@ -424,8 +405,7 @@ func shl152_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(160, rhs)
     if large_shift == 1:
@@ -446,8 +426,7 @@ func shl160_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(168, rhs)
     if large_shift == 1:
@@ -468,8 +447,7 @@ func shl168_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(176, rhs)
     if large_shift == 1:
@@ -490,8 +468,7 @@ func shl176_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(184, rhs)
     if large_shift == 1:
@@ -512,8 +489,7 @@ func shl184_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(192, rhs)
     if large_shift == 1:
@@ -534,8 +510,7 @@ func shl192_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(200, rhs)
     if large_shift == 1:
@@ -556,8 +531,7 @@ func shl200_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(208, rhs)
     if large_shift == 1:
@@ -578,8 +552,7 @@ func shl208_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(216, rhs)
     if large_shift == 1:
@@ -600,8 +573,7 @@ func shl216_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(224, rhs)
     if large_shift == 1:
@@ -622,8 +594,7 @@ func shl224_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(232, rhs)
     if large_shift == 1:
@@ -644,8 +615,7 @@ func shl232_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(240, rhs)
     if large_shift == 1:
@@ -666,8 +636,7 @@ func shl240_256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs 
         return (0)
     end
 end
-func shl248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func shl248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # width <= rhs (shift amount) means result will be 0
     let (large_shift) = is_le_felt(248, rhs)
     if large_shift == 1:

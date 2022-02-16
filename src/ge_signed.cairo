@@ -3,13 +3,11 @@ from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_signed_le
 from warplib.maths.lt_signed import (
-    le_signed8, le_signed16, le_signed24, le_signed32, le_signed40,
-    le_signed48, le_signed56, le_signed64, le_signed72, le_signed80,
-    le_signed88, le_signed96, le_signed104, le_signed112, le_signed120,
-    le_signed128, le_signed136, le_signed144, le_signed152, le_signed160,
-    le_signed168, le_signed176, le_signed184, le_signed192, le_signed200,
-    le_signed208, le_signed216, le_signed224, le_signed232, le_signed240,
-    le_signed248)
+    le_signed8, le_signed16, le_signed24, le_signed32, le_signed40, le_signed48, le_signed56,
+    le_signed64, le_signed72, le_signed80, le_signed88, le_signed96, le_signed104, le_signed112,
+    le_signed120, le_signed128, le_signed136, le_signed144, le_signed152, le_signed160,
+    le_signed168, le_signed176, le_signed184, le_signed192, le_signed200, le_signed208,
+    le_signed216, le_signed224, le_signed232, le_signed240, le_signed248)
 
 func ge_signed8{bitwise_ptr : BitwiseBuiltin*, range_check_ptr}(lhs : felt, rhs : felt) -> (
         res : felt):

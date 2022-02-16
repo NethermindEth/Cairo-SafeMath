@@ -3,11 +3,9 @@ from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_sub
 from warplib.maths.mul import (
-    mul8, mul16, mul24, mul32, mul40, mul48, mul56, mul64,
-    mul72, mul80, mul88, mul96, mul104, mul112, mul120,
-    mul128, mul136, mul144, mul152, mul160, mul168, mul176,
-    mul184, mul192, mul200, mul208, mul216, mul224, mul232,
-    mul240, mul248, mul256)
+    mul8, mul16, mul24, mul32, mul40, mul48, mul56, mul64, mul72, mul80, mul88, mul96, mul104,
+    mul112, mul120, mul128, mul136, mul144, mul152, mul160, mul168, mul176, mul184, mul192, mul200,
+    mul208, mul216, mul224, mul232, mul240, mul248, mul256)
 
 func _repeated_multiplication8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         op : felt, count : felt) -> (res : felt):
@@ -21,8 +19,7 @@ func _repeated_multiplication8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -45,8 +42,7 @@ func _repeated_multiplication16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -69,8 +65,7 @@ func _repeated_multiplication24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -93,8 +88,7 @@ func _repeated_multiplication32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -117,8 +111,7 @@ func _repeated_multiplication40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -141,8 +134,7 @@ func _repeated_multiplication48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -165,8 +157,7 @@ func _repeated_multiplication56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -189,8 +180,7 @@ func _repeated_multiplication64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -213,8 +203,7 @@ func _repeated_multiplication72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -237,8 +226,7 @@ func _repeated_multiplication80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -261,8 +249,7 @@ func _repeated_multiplication88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -285,8 +272,7 @@ func _repeated_multiplication96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         return (res)
     end
 end
-func exp96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -309,8 +295,7 @@ func _repeated_multiplication104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -333,8 +318,7 @@ func _repeated_multiplication112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -357,8 +341,7 @@ func _repeated_multiplication120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -381,8 +364,7 @@ func _repeated_multiplication128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -405,8 +387,7 @@ func _repeated_multiplication136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -429,8 +410,7 @@ func _repeated_multiplication144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -453,8 +433,7 @@ func _repeated_multiplication152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -477,8 +456,7 @@ func _repeated_multiplication160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -501,8 +479,7 @@ func _repeated_multiplication168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -525,8 +502,7 @@ func _repeated_multiplication176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -549,8 +525,7 @@ func _repeated_multiplication184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -573,8 +548,7 @@ func _repeated_multiplication192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -597,8 +571,7 @@ func _repeated_multiplication200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -621,8 +594,7 @@ func _repeated_multiplication208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -645,8 +617,7 @@ func _repeated_multiplication216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -669,8 +640,7 @@ func _repeated_multiplication224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -693,8 +663,7 @@ func _repeated_multiplication232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -717,8 +686,7 @@ func _repeated_multiplication240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
@@ -741,8 +709,7 @@ func _repeated_multiplication248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}
         return (res)
     end
 end
-func exp248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func exp248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     if lhs * (lhs - 1) * (rhs - 1) == 0:
         return (lhs)
     else:
