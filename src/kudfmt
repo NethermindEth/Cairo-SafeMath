@@ -1,0 +1,8 @@
+#!/bin/bash
+format_files=$(find -name "*.cairo")
+
+for file in $format_files
+do
+  echo "$file"
+  cairo-format -i "$file"
+done
