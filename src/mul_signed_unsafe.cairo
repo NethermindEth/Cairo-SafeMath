@@ -4,463 +4,468 @@ from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.cairo.common.uint256 import Uint256, uint256_mul, uint256_cond_neg, uint256_signed_nn
 from warplib.maths.mul_unsafe import (
-    mul_unsafe8, mul_unsafe16, mul_unsafe24, mul_unsafe32, mul_unsafe40, mul_unsafe48, mul_unsafe56,
-    mul_unsafe64, mul_unsafe72, mul_unsafe80, mul_unsafe88, mul_unsafe96, mul_unsafe104,
-    mul_unsafe112, mul_unsafe120, mul_unsafe128, mul_unsafe136, mul_unsafe144, mul_unsafe152,
-    mul_unsafe160, mul_unsafe168, mul_unsafe176, mul_unsafe184, mul_unsafe192, mul_unsafe200,
-    mul_unsafe208, mul_unsafe216, mul_unsafe224, mul_unsafe232, mul_unsafe240, mul_unsafe248)
+    warp_mul_unsafe8, warp_mul_unsafe16, warp_mul_unsafe24, warp_mul_unsafe32, warp_mul_unsafe40,
+    warp_mul_unsafe48, warp_mul_unsafe56, warp_mul_unsafe64, warp_mul_unsafe72, warp_mul_unsafe80,
+    warp_mul_unsafe88, warp_mul_unsafe96, warp_mul_unsafe104, warp_mul_unsafe112,
+    warp_mul_unsafe120, warp_mul_unsafe128, warp_mul_unsafe136, warp_mul_unsafe144,
+    warp_mul_unsafe152, warp_mul_unsafe160, warp_mul_unsafe168, warp_mul_unsafe176,
+    warp_mul_unsafe184, warp_mul_unsafe192, warp_mul_unsafe200, warp_mul_unsafe208,
+    warp_mul_unsafe216, warp_mul_unsafe224, warp_mul_unsafe232, warp_mul_unsafe240,
+    warp_mul_unsafe248)
 from warplib.maths.negate import (
-    negate8, negate16, negate24, negate32, negate40, negate48, negate56, negate64, negate72,
-    negate80, negate88, negate96, negate104, negate112, negate120, negate128, negate136, negate144,
-    negate152, negate160, negate168, negate176, negate184, negate192, negate200, negate208,
-    negate216, negate224, negate232, negate240, negate248)
+    warp_negate8, warp_negate16, warp_negate24, warp_negate32, warp_negate40, warp_negate48,
+    warp_negate56, warp_negate64, warp_negate72, warp_negate80, warp_negate88, warp_negate96,
+    warp_negate104, warp_negate112, warp_negate120, warp_negate128, warp_negate136, warp_negate144,
+    warp_negate152, warp_negate160, warp_negate168, warp_negate176, warp_negate184, warp_negate192,
+    warp_negate200, warp_negate208, warp_negate216, warp_negate224, warp_negate232, warp_negate240,
+    warp_negate248)
 from warplib.maths.utils import felt_to_uint256
 
-func mul_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+func warp_mul_signed_unsafe8{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+        lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80)
     let (local right_msb) = bitwise_and(rhs, 0x80)
-    let (res) = mul_unsafe8(lhs, rhs)
+    let (res) = warp_mul_unsafe8(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate8(res)
+        let (res) = warp_negate8(res)
         return (res)
     end
 end
-func mul_signed_unsafe16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe16{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000)
     let (local right_msb) = bitwise_and(rhs, 0x8000)
-    let (res) = mul_unsafe16(lhs, rhs)
+    let (res) = warp_mul_unsafe16(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate16(res)
+        let (res) = warp_negate16(res)
         return (res)
     end
 end
-func mul_signed_unsafe24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe24{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000)
     let (local right_msb) = bitwise_and(rhs, 0x800000)
-    let (res) = mul_unsafe24(lhs, rhs)
+    let (res) = warp_mul_unsafe24(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate24(res)
+        let (res) = warp_negate24(res)
         return (res)
     end
 end
-func mul_signed_unsafe32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe32{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000)
-    let (res) = mul_unsafe32(lhs, rhs)
+    let (res) = warp_mul_unsafe32(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate32(res)
+        let (res) = warp_negate32(res)
         return (res)
     end
 end
-func mul_signed_unsafe40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe40{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000)
-    let (res) = mul_unsafe40(lhs, rhs)
+    let (res) = warp_mul_unsafe40(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate40(res)
+        let (res) = warp_negate40(res)
         return (res)
     end
 end
-func mul_signed_unsafe48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe48{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000)
-    let (res) = mul_unsafe48(lhs, rhs)
+    let (res) = warp_mul_unsafe48(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate48(res)
+        let (res) = warp_negate48(res)
         return (res)
     end
 end
-func mul_signed_unsafe56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe56{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000)
-    let (res) = mul_unsafe56(lhs, rhs)
+    let (res) = warp_mul_unsafe56(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate56(res)
+        let (res) = warp_negate56(res)
         return (res)
     end
 end
-func mul_signed_unsafe64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe64{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000)
-    let (res) = mul_unsafe64(lhs, rhs)
+    let (res) = warp_mul_unsafe64(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate64(res)
+        let (res) = warp_negate64(res)
         return (res)
     end
 end
-func mul_signed_unsafe72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe72{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000)
-    let (res) = mul_unsafe72(lhs, rhs)
+    let (res) = warp_mul_unsafe72(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate72(res)
+        let (res) = warp_negate72(res)
         return (res)
     end
 end
-func mul_signed_unsafe80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe80{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000)
-    let (res) = mul_unsafe80(lhs, rhs)
+    let (res) = warp_mul_unsafe80(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate80(res)
+        let (res) = warp_negate80(res)
         return (res)
     end
 end
-func mul_signed_unsafe88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe88{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000)
-    let (res) = mul_unsafe88(lhs, rhs)
+    let (res) = warp_mul_unsafe88(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate88(res)
+        let (res) = warp_negate88(res)
         return (res)
     end
 end
-func mul_signed_unsafe96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe96{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000000000)
-    let (res) = mul_unsafe96(lhs, rhs)
+    let (res) = warp_mul_unsafe96(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate96(res)
+        let (res) = warp_negate96(res)
         return (res)
     end
 end
-func mul_signed_unsafe104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe104{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000000000)
-    let (res) = mul_unsafe104(lhs, rhs)
+    let (res) = warp_mul_unsafe104(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate104(res)
+        let (res) = warp_negate104(res)
         return (res)
     end
 end
-func mul_signed_unsafe112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe112{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000000000)
-    let (res) = mul_unsafe112(lhs, rhs)
+    let (res) = warp_mul_unsafe112(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate112(res)
+        let (res) = warp_negate112(res)
         return (res)
     end
 end
-func mul_signed_unsafe120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe120{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000000000000000)
-    let (res) = mul_unsafe120(lhs, rhs)
+    let (res) = warp_mul_unsafe120(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate120(res)
+        let (res) = warp_negate120(res)
         return (res)
     end
 end
-func mul_signed_unsafe128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe128{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000000000000000)
-    let (res) = mul_unsafe128(lhs, rhs)
+    let (res) = warp_mul_unsafe128(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate128(res)
+        let (res) = warp_negate128(res)
         return (res)
     end
 end
-func mul_signed_unsafe136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe136{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000000000000000)
-    let (res) = mul_unsafe136(lhs, rhs)
+    let (res) = warp_mul_unsafe136(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate136(res)
+        let (res) = warp_negate136(res)
         return (res)
     end
 end
-func mul_signed_unsafe144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe144{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000000000000000000000)
-    let (res) = mul_unsafe144(lhs, rhs)
+    let (res) = warp_mul_unsafe144(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate144(res)
+        let (res) = warp_negate144(res)
         return (res)
     end
 end
-func mul_signed_unsafe152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe152{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000000000000000000000)
-    let (res) = mul_unsafe152(lhs, rhs)
+    let (res) = warp_mul_unsafe152(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate152(res)
+        let (res) = warp_negate152(res)
         return (res)
     end
 end
-func mul_signed_unsafe160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe160{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000000000000000000000)
-    let (res) = mul_unsafe160(lhs, rhs)
+    let (res) = warp_mul_unsafe160(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate160(res)
+        let (res) = warp_negate160(res)
         return (res)
     end
 end
-func mul_signed_unsafe168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe168{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000000000000000000000000000)
-    let (res) = mul_unsafe168(lhs, rhs)
+    let (res) = warp_mul_unsafe168(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate168(res)
+        let (res) = warp_negate168(res)
         return (res)
     end
 end
-func mul_signed_unsafe176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe176{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe176(lhs, rhs)
+    let (res) = warp_mul_unsafe176(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate176(res)
+        let (res) = warp_negate176(res)
         return (res)
     end
 end
-func mul_signed_unsafe184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe184{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe184(lhs, rhs)
+    let (res) = warp_mul_unsafe184(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate184(res)
+        let (res) = warp_negate184(res)
         return (res)
     end
 end
-func mul_signed_unsafe192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe192{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x800000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x800000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe192(lhs, rhs)
+    let (res) = warp_mul_unsafe192(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate192(res)
+        let (res) = warp_negate192(res)
         return (res)
     end
 end
-func mul_signed_unsafe200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe200{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x80000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x80000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe200(lhs, rhs)
+    let (res) = warp_mul_unsafe200(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate200(res)
+        let (res) = warp_negate200(res)
         return (res)
     end
 end
-func mul_signed_unsafe208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe208{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(rhs, 0x8000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe208(lhs, rhs)
+    let (res) = warp_mul_unsafe208(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate208(res)
+        let (res) = warp_negate208(res)
         return (res)
     end
 end
-func mul_signed_unsafe216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe216{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(
         lhs, 0x800000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(
         rhs, 0x800000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe216(lhs, rhs)
+    let (res) = warp_mul_unsafe216(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate216(res)
+        let (res) = warp_negate216(res)
         return (res)
     end
 end
-func mul_signed_unsafe224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe224{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(
         lhs, 0x80000000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(
         rhs, 0x80000000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe224(lhs, rhs)
+    let (res) = warp_mul_unsafe224(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate224(res)
+        let (res) = warp_negate224(res)
         return (res)
     end
 end
-func mul_signed_unsafe232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe232{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(
         lhs, 0x8000000000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(
         rhs, 0x8000000000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe232(lhs, rhs)
+    let (res) = warp_mul_unsafe232(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x10000000000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate232(res)
+        let (res) = warp_negate232(res)
         return (res)
     end
 end
-func mul_signed_unsafe240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe240{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(
         lhs, 0x800000000000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(
         rhs, 0x800000000000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe240(lhs, rhs)
+    let (res) = warp_mul_unsafe240(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x1000000000000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate240(res)
+        let (res) = warp_negate240(res)
         return (res)
     end
 end
-func mul_signed_unsafe248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe248{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : felt, rhs : felt) -> (res : felt):
     alloc_locals
     let (local left_msb) = bitwise_and(
         lhs, 0x80000000000000000000000000000000000000000000000000000000000000)
     let (local right_msb) = bitwise_and(
         rhs, 0x80000000000000000000000000000000000000000000000000000000000000)
-    let (res) = mul_unsafe248(lhs, rhs)
+    let (res) = warp_mul_unsafe248(lhs, rhs)
     let neg = (left_msb + right_msb) * (0x100000000000000000000000000000000000000000000000000000000000000 - left_msb - right_msb)
     if neg == 0:
         return (res)
     else:
-        let (res) = negate248(res)
+        let (res) = warp_negate248(res)
         return (res)
     end
 end
-func mul_signed_unsafe256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
+func warp_mul_signed_unsafe256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
         lhs : Uint256, rhs : Uint256) -> (result : Uint256):
     alloc_locals
     let (lhs_nn) = uint256_signed_nn(lhs)

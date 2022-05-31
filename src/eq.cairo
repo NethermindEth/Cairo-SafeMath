@@ -1,6 +1,6 @@
 from starkware.cairo.common.uint256 import Uint256, uint256_eq
 
-func eq(lhs : felt, rhs : felt) -> (result : felt):
+func warp_eq(lhs : felt, rhs : felt) -> (result : felt):
     if lhs == rhs:
         return (1)
     else:
@@ -8,6 +8,6 @@ func eq(lhs : felt, rhs : felt) -> (result : felt):
     end
 end
 
-func eq256{range_check_ptr}(lhs : Uint256, rhs : Uint256) -> (res : felt):
+func warp_eq256{range_check_ptr}(lhs : Uint256, rhs : Uint256) -> (res : felt):
     return uint256_eq(lhs, rhs)
 end
