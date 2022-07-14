@@ -228,7 +228,8 @@ end
 
 func warp_external_input_check_int232{range_check_ptr}(x : felt):
     let (inRange : felt) = is_le_felt(
-        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     with_attr error_message("Error: value out-of-bounds. Value must be less than 2**232."):
         assert 1 = inRange
     end
@@ -237,7 +238,8 @@ end
 
 func warp_external_input_check_int240{range_check_ptr}(x : felt):
     let (inRange : felt) = is_le_felt(
-        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     with_attr error_message("Error: value out-of-bounds. Value must be less than 2**240."):
         assert 1 = inRange
     end
@@ -246,7 +248,8 @@ end
 
 func warp_external_input_check_int248{range_check_ptr}(x : felt):
     let (inRange : felt) = is_le_felt(
-        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        x, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     with_attr error_message("Error: value out-of-bounds. Value must be less than 2**248."):
         assert 1 = inRange
     end

@@ -15,10 +15,12 @@ func warp_sub_signed_unsafe8{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : fe
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xff)
+    let (res) = bitwise_and(extended_res, 0xff)
+    return (res)
 end
 func warp_sub_signed_unsafe16{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000)
@@ -30,10 +32,12 @@ func warp_sub_signed_unsafe16{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffff)
+    let (res) = bitwise_and(extended_res, 0xffff)
+    return (res)
 end
 func warp_sub_signed_unsafe24{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000)
@@ -45,10 +49,12 @@ func warp_sub_signed_unsafe24{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffff)
+    let (res) = bitwise_and(extended_res, 0xffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe32{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000)
@@ -60,10 +66,12 @@ func warp_sub_signed_unsafe32{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe40{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000)
@@ -75,10 +83,12 @@ func warp_sub_signed_unsafe40{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe48{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000)
@@ -90,10 +100,12 @@ func warp_sub_signed_unsafe48{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe56{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000)
@@ -105,10 +117,12 @@ func warp_sub_signed_unsafe56{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe64{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000)
@@ -120,10 +134,12 @@ func warp_sub_signed_unsafe64{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe72{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000)
@@ -135,10 +151,12 @@ func warp_sub_signed_unsafe72{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe80{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000)
@@ -150,10 +168,12 @@ func warp_sub_signed_unsafe80{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe88{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000000000)
@@ -165,10 +185,12 @@ func warp_sub_signed_unsafe88{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe96{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000000000)
@@ -180,10 +202,12 @@ func warp_sub_signed_unsafe96{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : f
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe104{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000000000)
@@ -195,10 +219,12 @@ func warp_sub_signed_unsafe104{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe112{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000000000000000)
@@ -210,10 +236,12 @@ func warp_sub_signed_unsafe112{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe120{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000000000000000)
@@ -225,10 +253,12 @@ func warp_sub_signed_unsafe120{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe128{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000000000000000)
@@ -240,10 +270,12 @@ func warp_sub_signed_unsafe128{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe136{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000000000000000000000)
@@ -255,10 +287,12 @@ func warp_sub_signed_unsafe136{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe144{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000000000000000000000)
@@ -270,10 +304,12 @@ func warp_sub_signed_unsafe144{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe152{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000000000000000000000)
@@ -285,10 +321,12 @@ func warp_sub_signed_unsafe152{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe160{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000000000000000000000000000)
@@ -300,10 +338,12 @@ func warp_sub_signed_unsafe160{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe168{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000000000000000000000000000)
@@ -315,10 +355,12 @@ func warp_sub_signed_unsafe168{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe176{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000000000000000000000000000)
@@ -330,10 +372,12 @@ func warp_sub_signed_unsafe176{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe184{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x8000000000000000000000000000000000000000000000)
@@ -345,10 +389,12 @@ func warp_sub_signed_unsafe184{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe192{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x800000000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x800000000000000000000000000000000000000000000000)
@@ -360,10 +406,12 @@ func warp_sub_signed_unsafe192{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe200{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x80000000000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs, 0x80000000000000000000000000000000000000000000000000)
@@ -375,14 +423,17 @@ func warp_sub_signed_unsafe200{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe208{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x8000000000000000000000000000000000000000000000000000)
+        rhs, 0x8000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -391,15 +442,19 @@ func warp_sub_signed_unsafe208{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe216{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x800000000000000000000000000000000000000000000000000000)
+        lhs, 0x800000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x800000000000000000000000000000000000000000000000000000)
+        rhs, 0x800000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -408,15 +463,19 @@ func warp_sub_signed_unsafe216{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed_unsafe224{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x80000000000000000000000000000000000000000000000000000000)
+        lhs, 0x80000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x80000000000000000000000000000000000000000000000000000000)
+        rhs, 0x80000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -425,15 +484,21 @@ func warp_sub_signed_unsafe224{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed_unsafe232{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x8000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x8000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x8000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x8000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -442,15 +507,21 @@ func warp_sub_signed_unsafe232{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed_unsafe240{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x800000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x800000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x800000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x800000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -459,15 +530,21 @@ func warp_sub_signed_unsafe240{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed_unsafe248{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (
-        res : felt):
+    res : felt
+):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x80000000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x80000000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x80000000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x80000000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -476,9 +553,12 @@ func warp_sub_signed_unsafe248{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : 
     let extended_res : felt = left_safe + right_neg
 
     # Narrow and return
-    return bitwise_and(
-        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed_unsafe256{range_check_ptr}(lhs : Uint256, rhs : Uint256) -> (res : Uint256):
-    return uint256_sub(lhs, rhs)
+    let (res) = uint256_sub(lhs, rhs)
+    return (res)
 end

@@ -5,128 +5,162 @@ from starkware.cairo.common.uint256 import Uint256, uint256_neg
 
 func warp_negate8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100 - op
-    return bitwise_and(raw_res, 0xff)
+    let (res) = bitwise_and(raw_res, 0xff)
+    return (res)
 end
 func warp_negate16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000 - op
-    return bitwise_and(raw_res, 0xffff)
+    let (res) = bitwise_and(raw_res, 0xffff)
+    return (res)
 end
 func warp_negate24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000 - op
-    return bitwise_and(raw_res, 0xffffff)
+    let (res) = bitwise_and(raw_res, 0xffffff)
+    return (res)
 end
 func warp_negate32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000 - op
-    return bitwise_and(raw_res, 0xffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffff)
+    return (res)
 end
 func warp_negate40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000 - op
-    return bitwise_and(raw_res, 0xffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffff)
+    return (res)
 end
 func warp_negate48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffff)
+    return (res)
 end
 func warp_negate56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffff)
+    return (res)
 end
 func warp_negate64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffff)
+    return (res)
 end
 func warp_negate72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_negate80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_negate88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate232{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x10000000000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate240{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x1000000000000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_negate248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let raw_res = 0x100000000000000000000000000000000000000000000000000000000000000 - op
-    return bitwise_and(raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        raw_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_negate256{range_check_ptr}(op : Uint256) -> (res : Uint256):
-    return uint256_neg(op)
+    let (res) = uint256_neg(op)
+    return (res)
 end

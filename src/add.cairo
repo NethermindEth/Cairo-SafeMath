@@ -167,28 +167,32 @@ end
 func warp_add224{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let res = lhs + rhs
     let (inRange : felt) = is_le_felt(
-        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     assert inRange = 1
     return (res)
 end
 func warp_add232{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let res = lhs + rhs
     let (inRange : felt) = is_le_felt(
-        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     assert inRange = 1
     return (res)
 end
 func warp_add240{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let res = lhs + rhs
     let (inRange : felt) = is_le_felt(
-        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     assert inRange = 1
     return (res)
 end
 func warp_add248{range_check_ptr}(lhs : felt, rhs : felt) -> (res : felt):
     let res = lhs + rhs
     let (inRange : felt) = is_le_felt(
-        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+        res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
     assert inRange = 1
     return (res)
 end

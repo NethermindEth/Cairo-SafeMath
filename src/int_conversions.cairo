@@ -245,7 +245,8 @@ func warp_int8_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fel
     end
 end
 func warp_int8_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -254,12 +255,14 @@ func warp_int8_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : fe
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffffffffffffff00, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffffffffffffff00, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int16_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int16_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000)
@@ -494,7 +497,8 @@ func warp_int16_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int16_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -503,15 +507,18 @@ func warp_int16_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffffffffffff0000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffffffffffff0000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int24_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int24_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int24_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000)
@@ -738,7 +745,8 @@ func warp_int24_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int24_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -747,18 +755,22 @@ func warp_int24_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffffffffff000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffffffffff000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int32_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int32_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int32_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int32_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000)
@@ -977,7 +989,8 @@ func warp_int32_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int32_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -986,21 +999,26 @@ func warp_int32_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffffffff00000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffffffff00000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int40_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int40_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int40_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int40_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int40_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000)
@@ -1211,7 +1229,8 @@ func warp_int40_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int40_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1220,24 +1239,30 @@ func warp_int40_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffffff0000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffffff0000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int48_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int48_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int48_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int48_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int48_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int48_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000)
@@ -1440,7 +1465,8 @@ func warp_int48_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int48_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1449,27 +1475,34 @@ func warp_int48_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffffff000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffffff000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int56_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int56_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int56_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int56_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int56_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int56_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int56_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000)
@@ -1664,7 +1697,8 @@ func warp_int56_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int56_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1673,30 +1707,38 @@ func warp_int56_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffffff00000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffffff00000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int64_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int64_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int64_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int64_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int64_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int64_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int64_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int64_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000)
@@ -1883,7 +1925,8 @@ func warp_int64_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int64_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -1892,33 +1935,42 @@ func warp_int64_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffffff0000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffffff0000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int72_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int72_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int72_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int72_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int72_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int72_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int72_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int72_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int72_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000)
@@ -2097,7 +2149,8 @@ func warp_int72_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int72_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2106,36 +2159,46 @@ func warp_int72_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffffff000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffffff000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int80_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int80_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int80_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int80_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int80_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int80_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int80_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int80_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int80_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int80_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
@@ -2306,7 +2369,8 @@ func warp_int80_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int80_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2315,39 +2379,50 @@ func warp_int80_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffffff00000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffffff00000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int88_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int88_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int88_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int88_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int88_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int88_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int88_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int88_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int88_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int88_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int88_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
@@ -2510,7 +2585,8 @@ func warp_int88_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int88_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2519,42 +2595,54 @@ func warp_int88_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffffff0000000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffffff0000000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int96_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int96_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int96_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int96_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int96_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int96_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int96_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int96_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int96_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int96_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int96_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int96_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
@@ -2709,7 +2797,8 @@ func warp_int96_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : fe
     end
 end
 func warp_int96_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2718,45 +2807,58 @@ func warp_int96_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : f
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffffff000000000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffffff000000000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int104_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int104_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int104_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int104_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int104_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int104_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int104_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int104_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
@@ -2903,7 +3005,8 @@ func warp_int104_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int104_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -2912,48 +3015,62 @@ func warp_int104_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffffff00000000000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffffff00000000000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int112_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int112_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int112_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int112_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int112_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int112_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int112_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int112_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
@@ -3092,7 +3209,8 @@ func warp_int112_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int112_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3101,51 +3219,66 @@ func warp_int112_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xffff0000000000000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xffff0000000000000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int120_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int120_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int120_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int120_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int120_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int120_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int120_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int120_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
@@ -3276,7 +3409,8 @@ func warp_int120_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int120_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3285,54 +3419,70 @@ func warp_int120_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     else:
         let (res, _) = uint256_add(
             naiveExtension,
-            Uint256(0xff000000000000000000000000000000, 0xffffffffffffffffffffffffffffffff))
+            Uint256(0xff000000000000000000000000000000, 0xffffffffffffffffffffffffffffffff),
+        )
         return (res)
     end
 end
 func warp_int128_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int128_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int128_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int128_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int128_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int128_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int128_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int128_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
@@ -3455,7 +3605,8 @@ func warp_int128_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int128_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3467,52 +3618,68 @@ func warp_int128_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int136_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int136_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int136_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int136_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int136_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int136_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int136_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int136_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
@@ -3627,7 +3794,8 @@ func warp_int136_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int136_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3639,55 +3807,72 @@ func warp_int136_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int144_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int144_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int144_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int144_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int144_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int144_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int144_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int144_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
@@ -3794,7 +3979,8 @@ func warp_int144_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int144_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3806,58 +3992,76 @@ func warp_int144_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int152_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int152_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int152_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int152_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int152_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int152_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int152_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int152_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
@@ -3956,7 +4160,8 @@ func warp_int152_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int152_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -3968,61 +4173,80 @@ func warp_int152_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int160_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int160_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int160_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int160_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int160_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int160_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int160_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int160_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
@@ -4113,7 +4337,8 @@ func warp_int160_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int160_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4125,64 +4350,84 @@ func warp_int160_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int168_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int168_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int168_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int168_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int168_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int168_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int168_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int168_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
@@ -4265,7 +4510,8 @@ func warp_int168_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int168_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4277,67 +4523,88 @@ func warp_int168_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int176_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int176_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int176_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int176_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int176_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int176_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int176_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int176_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
@@ -4412,7 +4679,8 @@ func warp_int176_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int176_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4424,70 +4692,92 @@ func warp_int176_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int184_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int184_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int184_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int184_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int184_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int184_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int184_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int184_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
@@ -4554,7 +4844,8 @@ func warp_int184_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int184_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4566,73 +4857,96 @@ func warp_int184_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int192_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int192_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int192_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int192_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int192_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int192_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int192_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int192_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
@@ -4691,7 +5005,8 @@ func warp_int192_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int192_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4703,76 +5018,100 @@ func warp_int192_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int200_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int200_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int200_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int200_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int200_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int200_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int200_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int200_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
@@ -4823,7 +5162,8 @@ func warp_int200_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int200_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4835,79 +5175,104 @@ func warp_int200_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int208_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int208_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int208_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int208_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int208_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int208_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int208_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int208_to_int216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
@@ -4950,7 +5315,8 @@ func warp_int208_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int208_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -4962,82 +5328,108 @@ func warp_int208_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int216_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int216_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int216_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int216_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int216_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int216_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int216_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int216_to_int224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
@@ -5072,7 +5464,8 @@ func warp_int216_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int216_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -5084,85 +5477,112 @@ func warp_int216_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int224_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int224_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int224_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int224_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int224_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int224_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int224_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int224_to_int232{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
@@ -5189,7 +5609,8 @@ func warp_int224_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int224_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -5201,88 +5622,116 @@ func warp_int224_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int232_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int232_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int232_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int232_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int232_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int232_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int232_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int232_to_int240{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000000000)
@@ -5301,7 +5750,8 @@ func warp_int232_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int232_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x8000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -5313,91 +5763,120 @@ func warp_int232_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int240_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int240_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int240_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int240_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int240_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int240_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int240_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int232{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int240_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000000000)
@@ -5408,7 +5887,8 @@ func warp_int240_to_int248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : f
     end
 end
 func warp_int240_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x800000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -5420,97 +5900,128 @@ func warp_int240_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int248_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xff)
+    let (res) = bitwise_and(op, 0xff)
+    return (res)
 end
 func warp_int248_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffff)
+    let (res) = bitwise_and(op, 0xffff)
+    return (res)
 end
 func warp_int248_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffff)
+    let (res) = bitwise_and(op, 0xffffff)
+    return (res)
 end
 func warp_int248_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffff)
+    let (res) = bitwise_and(op, 0xffffffff)
+    return (res)
 end
 func warp_int248_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffff)
+    return (res)
 end
 func warp_int248_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffff)
+    return (res)
 end
 func warp_int248_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int232{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int240{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int248_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (
-        res : Uint256):
+    res : Uint256
+):
     let (msb) = bitwise_and(op, 0x80000000000000000000000000000000000000000000000000000000000000)
     let (high, low) = split_felt(op)
     let naiveExtension = Uint256(low, high)
@@ -5522,52 +6033,68 @@ func warp_int248_to_int256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(op : 
     end
 end
 func warp_int256_to_int8{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xff)
+    let (res) = bitwise_and(op.low, 0xff)
+    return (res)
 end
 func warp_int256_to_int16{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffff)
+    let (res) = bitwise_and(op.low, 0xffff)
+    return (res)
 end
 func warp_int256_to_int24{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffff)
+    let (res) = bitwise_and(op.low, 0xffffff)
+    return (res)
 end
 func warp_int256_to_int32{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffff)
+    return (res)
 end
 func warp_int256_to_int40{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffff)
+    return (res)
 end
 func warp_int256_to_int48{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffff)
+    return (res)
 end
 func warp_int256_to_int56{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int64{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int72{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int80{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int88{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int96{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int104{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int112{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int120{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int128{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
-    return bitwise_and(op.low, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(op.low, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_int256_to_int136{bitwise_ptr : BitwiseBuiltin*}(op : Uint256) -> (res : felt):
     let (high) = bitwise_and(op.high, 0xff)

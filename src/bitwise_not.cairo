@@ -4,98 +4,130 @@ from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import Uint256, uint256_not
 
 func warp_bitwise_not8{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xff)
+    let (res) = bitwise_xor(op, 0xff)
+    return (res)
 end
 func warp_bitwise_not16{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffff)
+    let (res) = bitwise_xor(op, 0xffff)
+    return (res)
 end
 func warp_bitwise_not24{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffff)
+    let (res) = bitwise_xor(op, 0xffffff)
+    return (res)
 end
 func warp_bitwise_not32{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffff)
+    let (res) = bitwise_xor(op, 0xffffffff)
+    return (res)
 end
 func warp_bitwise_not40{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffff)
+    return (res)
 end
 func warp_bitwise_not48{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffff)
+    return (res)
 end
 func warp_bitwise_not56{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not64{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not72{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not80{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not88{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not96{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not104{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not112{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not120{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not128{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not136{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not144{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not152{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not160{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not168{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not176{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not184{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not192{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not200{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not208{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not216{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not224{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not232{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not240{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not248{bitwise_ptr : BitwiseBuiltin*}(op : felt) -> (res : felt):
-    return bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_xor(op, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_bitwise_not256{range_check_ptr}(op : Uint256) -> (res : Uint256):
-    return uint256_not(op)
+    let (res) = uint256_not(op)
+    return (res)
 end

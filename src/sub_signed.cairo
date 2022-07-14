@@ -2,7 +2,12 @@
 from starkware.cairo.common.bitwise import bitwise_and
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin
 from starkware.cairo.common.uint256 import (
-    Uint256, uint256_add, uint256_signed_le, uint256_sub, uint256_not)
+    Uint256,
+    uint256_add,
+    uint256_signed_le,
+    uint256_sub,
+    uint256_not,
+)
 
 func warp_sub_signed8{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -20,7 +25,8 @@ func warp_sub_signed8{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> 
     assert overflowBits * (overflowBits - 0x180) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xff)
+    let (res) = bitwise_and(extended_res, 0xff)
+    return (res)
 end
 func warp_sub_signed16{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -38,7 +44,8 @@ func warp_sub_signed16{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x18000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffff)
+    let (res) = bitwise_and(extended_res, 0xffff)
+    return (res)
 end
 func warp_sub_signed24{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -56,7 +63,8 @@ func warp_sub_signed24{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x1800000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffff)
+    let (res) = bitwise_and(extended_res, 0xffffff)
+    return (res)
 end
 func warp_sub_signed32{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -74,7 +82,8 @@ func warp_sub_signed32{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x180000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffff)
+    return (res)
 end
 func warp_sub_signed40{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -92,7 +101,8 @@ func warp_sub_signed40{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x18000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffff)
+    return (res)
 end
 func warp_sub_signed48{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -110,7 +120,8 @@ func warp_sub_signed48{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x1800000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffff)
+    return (res)
 end
 func warp_sub_signed56{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -128,7 +139,8 @@ func warp_sub_signed56{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x180000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffff)
+    return (res)
 end
 func warp_sub_signed64{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -146,7 +158,8 @@ func warp_sub_signed64{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x18000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed72{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -164,7 +177,8 @@ func warp_sub_signed72{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x1800000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed80{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -182,7 +196,8 @@ func warp_sub_signed80{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x180000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed88{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -200,7 +215,8 @@ func warp_sub_signed88{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x18000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed96{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -218,7 +234,8 @@ func warp_sub_signed96{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) ->
     assert overflowBits * (overflowBits - 0x1800000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed104{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -236,7 +253,8 @@ func warp_sub_signed104{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x180000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed112{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -254,7 +272,8 @@ func warp_sub_signed112{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed120{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -272,7 +291,8 @@ func warp_sub_signed120{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed128{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -290,7 +310,8 @@ func warp_sub_signed128{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed136{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -308,7 +329,8 @@ func warp_sub_signed136{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed144{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -326,7 +348,8 @@ func warp_sub_signed144{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed152{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -344,7 +367,8 @@ func warp_sub_signed152{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed160{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -362,7 +386,8 @@ func warp_sub_signed160{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed168{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -380,7 +405,8 @@ func warp_sub_signed168{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed176{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -398,7 +424,8 @@ func warp_sub_signed176{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed184{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -413,11 +440,13 @@ func warp_sub_signed184{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x18000000000000000000000000000000000000000000000)
+        extended_res, 0x18000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed192{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -432,11 +461,13 @@ func warp_sub_signed192{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x1800000000000000000000000000000000000000000000000)
+        extended_res, 0x1800000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed200{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
@@ -451,17 +482,20 @@ func warp_sub_signed200{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x180000000000000000000000000000000000000000000000000)
+        extended_res, 0x180000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed208{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs, 0x8000000000000000000000000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x8000000000000000000000000000000000000000000000000000)
+        rhs, 0x8000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -471,18 +505,22 @@ func warp_sub_signed208{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x18000000000000000000000000000000000000000000000000000)
+        extended_res, 0x18000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed216{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x800000000000000000000000000000000000000000000000000000)
+        lhs, 0x800000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x800000000000000000000000000000000000000000000000000000)
+        rhs, 0x800000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -492,18 +530,22 @@ func warp_sub_signed216{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x1800000000000000000000000000000000000000000000000000000)
+        extended_res, 0x1800000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    return (res)
 end
 func warp_sub_signed224{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x80000000000000000000000000000000000000000000000000000000)
+        lhs, 0x80000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x80000000000000000000000000000000000000000000000000000000)
+        rhs, 0x80000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -513,18 +555,24 @@ func warp_sub_signed224{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x180000000000000000000000000000000000000000000000000000000)
+        extended_res, 0x180000000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed232{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x8000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x8000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x8000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x8000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -534,18 +582,24 @@ func warp_sub_signed232{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x18000000000000000000000000000000000000000000000000000000000)
+        extended_res, 0x18000000000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x18000000000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed240{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x800000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x800000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x800000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x800000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -555,18 +609,24 @@ func warp_sub_signed240{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x1800000000000000000000000000000000000000000000000000000000000)
+        extended_res, 0x1800000000000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x1800000000000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed248{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -> (res : felt):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(
-        lhs, 0x80000000000000000000000000000000000000000000000000000000000000)
+        lhs, 0x80000000000000000000000000000000000000000000000000000000000000
+    )
     let (right_msb : felt) = bitwise_and(
-        rhs, 0x80000000000000000000000000000000000000000000000000000000000000)
+        rhs, 0x80000000000000000000000000000000000000000000000000000000000000
+    )
     let left_safe : felt = lhs + 2 * left_msb
     let right_safe : felt = rhs + 2 * right_msb
 
@@ -576,15 +636,19 @@ func warp_sub_signed248{bitwise_ptr : BitwiseBuiltin*}(lhs : felt, rhs : felt) -
 
     # Check if the result fits in the correct width
     let (overflowBits) = bitwise_and(
-        extended_res, 0x180000000000000000000000000000000000000000000000000000000000000)
+        extended_res, 0x180000000000000000000000000000000000000000000000000000000000000
+    )
     assert overflowBits * (overflowBits - 0x180000000000000000000000000000000000000000000000000000000000000) = 0
 
     # Narrow and return
-    return bitwise_and(
-        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    let (res) = bitwise_and(
+        extended_res, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    )
+    return (res)
 end
 func warp_sub_signed256{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(
-        lhs : Uint256, rhs : Uint256) -> (res : Uint256):
+    lhs : Uint256, rhs : Uint256
+) -> (res : Uint256):
     # First sign extend both operands
     let (left_msb : felt) = bitwise_and(lhs.high, 0x80000000000000000000000000000000)
     let (right_msb : felt) = bitwise_and(rhs.high, 0x80000000000000000000000000000000)
